@@ -1,4 +1,4 @@
-import s from '../Footer.module.scss';
+import s from './Social.module.scss';
 import cn from 'classnames';
 
 export const Social = () => (
@@ -11,7 +11,7 @@ export const Social = () => (
     </div>
     <ul className={s.socialList}>
       <li>
-        <a className={cn(s.link, s.socialLinkFB)} href='/'>
+        <a className={cn(s.link, s.socialLinkFB)} href='#'>
           <svg
             width='24'
             height='24'
@@ -26,7 +26,7 @@ export const Social = () => (
         </a>
       </li>
       <li>
-        <a className={cn(s.link, s.socialLinkVK)} href='/'>
+        <a className={cn(s.link, s.socialLinkVK)} href='#'>
           <svg
             width='24'
             height='24'

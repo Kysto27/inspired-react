@@ -1,70 +1,32 @@
-import s from '../Footer.module.scss';
+import { NavLink } from 'react-router-dom';
+import s from './Category.module.scss';
 import cn from 'classnames';
 
-export const Category = () => (
+export const Category = ({list}) => (
   <div className={s.category}>
     <h2 className={cn(s.title, s.categoryTitle)}>КАТАЛОГ</h2>
-    <div className={s.categoryList}>
-      <ul className={s.categorySublist}>
-        <li>
-          <h3 className={s.categorySubtitle}>Женщины</h3>
+    <ul className={s.categoryList}>
+      {list.map((item) => (
+        <li key={item.link} className={s.item}>
+          <h3 className={s.categorySubtitle}>
+            <NavLink
+              className={s.link}
+              to={item.link}
+            >
+              {item.title}
+            </NavLink>
+          </h3>
+          <ul className={s.categorySublist}>
+            {item.categories.map((category) => (
+                <li key={category.link}>
+                  <NavLink className={s.link} to={`${item.link}/${category.link}`}>
+                    {category.title}
+                  </NavLink>
+                </li>
+            ))}
+          </ul>
         </li>
-        <li>
-          <a className={s.link} href='/'>
-            Бюстгальтеры
-          </a>
-        </li>
-        <li>
-          <a className={s.link} href='/'>
-            Трусы
-          </a>
-        </li>
-        <li>
-          <a className={s.link} href='/'>
-            Носки
-          </a>
-        </li>
-        <li>
-          <a className={s.link} href='/'>
-            Халаты
-          </a>
-        </li>
-        <li>
-          <a className={s.link} href='/'>
-            Термобелье
-          </a>
-        </li>
-        <li>
-          <a className={s.link} href='/'>
-            Пижамы
-          </a>
-        </li>
-      </ul>
-      <ul className={s.categorySublist}>
-        <li>
-          <h3 className={s.categorySubtitle}>Мужчины</h3>
-        </li>
-        <li>
-          <a className={s.link} href='/'>
-            Трусы
-          </a>
-        </li>
-        <li>
-          <a className={s.link} href='/'>
-            Носки
-          </a>
-        </li>
-        <li>
-          <a className={s.link} href='/'>
-            Халаты
-          </a>
-        </li>
-        <li>
-          <a className={s.link} href='/'>
-            Термобелье
-          </a>
-        </li>
-      </ul>
-    </div>
+      ))}
+    </ul>
   </div>
 );
