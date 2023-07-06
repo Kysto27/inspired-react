@@ -8,16 +8,18 @@ export const Category = ({ list }) => {
   const filteredList = list.filter((item) => item.link === activeGender);
   return (
     <ul className={s.category}>
-      {filteredList[0].categories.map((item) => (
-        <li key={item.link} className={s.item}>
-          <NavLink
-            className={({ isActive }) => cn(s.link, isActive && s.linkActive)}
-            to={`${activeGender}/${item.link}`}
-          >
-            {item.title}
-          </NavLink>
-        </li>
-      ))}
+      {filteredList.map((gender) =>
+        gender.categories.map((category) => (
+          <li key={category.link} className={s.item}>
+            <NavLink
+              className={({ isActive }) => cn(s.link, isActive && s.linkActive)}
+              to={`${activeGender}/${category.link}`}
+            >
+              {category.title}
+            </NavLink>
+          </li>
+        ))
+      )}
     </ul>
   );
 };
