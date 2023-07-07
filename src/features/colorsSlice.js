@@ -10,7 +10,7 @@ const colorsSlice = createSlice({
   name: 'colors',
   initialState: {
     status: 'idle',
-    colors: [],
+    colorList: [],
     error: null,
   },
   extraReducers: (builder) => {
@@ -20,7 +20,7 @@ const colorsSlice = createSlice({
       })
       .addCase(fetchColors.fulfilled, (state, action) => {
         state.status = 'success';
-        state.colors = action.payload;
+        state.colorList = action.payload;
       })
       .addCase(fetchColors.rejected, (state, action) => {
         state.status = 'failed';
