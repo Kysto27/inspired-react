@@ -3,8 +3,7 @@ import { COLORS_URL } from '../const';
 
 export const fetchColors = createAsyncThunk('colors/fetchColors', async () => {
   const response = await fetch(COLORS_URL);
-  const data = await response.json();
-  return data;
+  return await response.json();
 });
 
 const colorsSlice = createSlice({

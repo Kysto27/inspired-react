@@ -33,9 +33,6 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(fetchNavigation());
-  }, [dispatch]);
-
-  useEffect(() => {
     dispatch(fetchColors());
   }, [dispatch]);
 

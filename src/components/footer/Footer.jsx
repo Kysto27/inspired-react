@@ -9,7 +9,7 @@ import { Social } from './Social/Social.jsx';
 export const Footer = ({list}) => (
   <Container>
     <footer className={s.container}>
-      <Category list={list} />
+      <Category />
       <Social />
       <Contacts />
       <Copyright />
