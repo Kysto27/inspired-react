@@ -6,10 +6,12 @@ import { fetchGoods } from '../../features/goodsSlice.js';
 import s from './MainPage.module.scss';
 import { Product } from '../Product/Product';
 
-export const MainPage = ({ gender = 'women' }) => {
-  const { category } = useParams();
+export const MainPage = () => {
+  const { gender, category } = useParams();
   const dispatch = useDispatch();
   const { goodsList } = useSelector((state) => state.goods);
+
+  const {} = useSelector(state => state.navigation)
 
   useEffect(() => {
     dispatch(fetchGoods(gender));

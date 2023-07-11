@@ -12,7 +12,7 @@ export const Category = () => {
         {genderList?.map((gender) => (
           <li key={gender} className={s.item}>
             <h3 className={s.categorySubtitle}>
-              <NavLink className={s.link} to={gender}>
+              <NavLink className={s.link} to={`/catalog/${gender}`}>
                 {categories[gender].title}
               </NavLink>
             </h3>
@@ -21,7 +21,7 @@ export const Category = () => {
                 <li key={category.slug}>
                   <NavLink
                     className={s.link}
-                    to={`${gender}/${category.slug}`}
+                    to={`/catalog/${gender}/${category.slug}`}
                   >
                     {category.title}
                   </NavLink>

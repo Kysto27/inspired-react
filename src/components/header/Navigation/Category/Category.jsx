@@ -12,7 +12,7 @@ export const Category = () => {
         <li key={category.slug} className={s.item}>
           <NavLink
             className={({ isActive }) => cn(s.link, isActive && s.linkActive)}
-            to={`${activeGender}/${category.slug}`}
+            to={`/catalog/${activeGender}/${category.slug}`}
           >
             {category.title}
           </NavLink>
